@@ -14,7 +14,7 @@ describe DockingStation do
   it 'docks a bike' do
     station = DockingStation.new
     bike = Bike.new
-    expect(station.dock(bike)).to eq bike
+    expect(station.dock(bike)).to eq bike #parenthesis used for no chnages
   end
 
   describe 'release_bike' do
@@ -23,9 +23,9 @@ describe DockingStation do
     end
   end
 
-  describe 'dock' do
+  describe '#dock' do
     it 'raises an error when no spaces are available' do
-      subject.dock(Bike.new)
+      20.times { subject.dock Bike.new } #curly braces used for changes
       expect { subject.dock Bike.new }.to raise_error 'No space available'
     end
   end
